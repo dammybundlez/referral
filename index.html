@@ -1,167 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Referral</title>
-    <link rel="stylesheet" href="output.css">
-    <script src="https://kit.fontawesome.com/c4993cb090.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Referral</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="https://kit.fontawesome.com/c4993cb090.js" crossorigin="anonymous"></script>
 </head>
-<body class="relative min-h-screen">
-    <div
-    class="absolute inset-0 bg-no-repeat bg-top bg-cover"
-    style="background-image:url('bg.png')"
-    ></div>
 
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+<body class="relative min-h-screen bg-black overflow-x-hidden">
 
-    <div class="z-10 flex items-center justify-center py-5 flex-col gap-5 bg-black">
-        <div className=" h-16 px-6 py-4 bg-gradient-to-r from-green-200 to-red-200 rounded-[20px] outline outline-1 outline-offset-[-1px] outline-green-600 inline-flex justify-center items-center gap-2.5">
-            <div class="w-[800px] py-10 flex justify-between px-10 items-start bg-black rounded-[20px] outline outline-1 outline-offset-[-1px] outline-orange-300 overflow-hidden">
-                <img class="w-[86px] h-6 object-cover " src="connect.png" />
-                <div class="w-[346px] inline-flex flex-col justify-start items-center gap-4">
-                    <div class="size-[140px] relative bg-neutral-800 rounded-[100px] overflow-hidden">
-                    <img class="w-[140px] h-[167px] object-cover rounded-2xl shadow-[-6.889801025390625px_0.9842572808265686px_7.775632858276367px_-0.9842572808265686px_rgba(0,0,0,0.25)]" src="avatar.png" />
-                    </div>
-                    <div class="self-stretch flex flex-col justify-start items-center gap-6">
-                    <div class="self-stretch flex flex-col justify-start items-start gap-1.5">
-                        <div class="self-stretch text-center justify-start text-white text-[26px] font-semibold font-archivo leading-6">Figma Canva</div>
-                        <div class="self-stretch text-center justify-start text-white text-[17px] font-medium font-archivo leading-6">Digital Product Designer with 5+ years of exp. designing solutions & making impact.</div>
-                    </div>
-                    <div class="flex justify-between items-center gap-5">
-                        <div class="size-10 text-2xl  text-white">
-                            <i class="fa-brands fa-instagram"></i>
-                        </div>
-                        <div class="size-10 text-2xl  text-white">
-                            <i class="fa-brands fa-facebook"></i>
-                        </div>
-                        <div class="size-10 text-2xl  text-white">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </div>
-                        <div class="size-10 text-2xl  text-white">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="self-stretch flex flex-col justify-start items-center gap-1.5">
-                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                        <div class="h-[34px] p-2.5 bg-white/20 rounded-[60px] flex justify-center items-center gap-2.5">
-                        <div class="text-center justify-start text-white text-sm font-normal font-archivo leading-6">Product designer </div>
-                        </div>
-                        <div class="h-[34px] p-2.5 bg-white/20 rounded-[60px] flex justify-center items-center gap-2.5">
-                        <div class="text-center justify-start text-white text-sm font-normal font-archivo leading-6">UI/UX</div>
-                        </div>
-                        <div class="h-[34px] p-2.5 bg-white/20 rounded-[60px] flex justify-center items-center gap-2.5">
-                        <div class="text-center justify-start text-white text-sm font-normal font-archivo leading-6">Motion designer </div>
-                        </div>
-                    </div>
-                    <div class="inline-flex justify-center items-center gap-1.5">
-                        <div class=" text-white">
-                            <i class="fa-solid fa-cake-candles"></i>
-                        </div>
-                        <div class="w-[89px] h-[17px] text-center justify-center text-white text-xs font-normal font-archivo leading-6">Birthday: Jan 10</div>
-                    </div>
-                    </div>
-                </div>
-                <div class="size-[45px] flex items-center justify-center bg-white rounded-[100px] overflow-hidden">
+  <div
+    class="absolute top-0 left-0 w-full md:h-[50vh] h-[40vh] bg-no-repeat bg-top bg-cover"
+    style="background-image: url('bg.png');"
+  ></div>
+
+  <main class="relative z-10 flex flex-col items-center py-5 gap-5 px-4">
+
+    <!-- Profile Card -->
+    <section class="w-full max-w-[700px]">
+      <div class=" bg-gradient-to-r from-green-200 to-red-200 rounded-[20px] outline outline-1 outline-offset-[-1px] outline-yellow-600">
+        <div class="w-full md:py-10 py-5 flex flex-col justify-between items-center md:px-10 px-5  bg-black rounded-[20px] outline outline-1 outline-offset-[-1px] outline-orange-300 overflow-hidden gap-6">
+            <div class="flex justify-between items-center w-full">
+                <img class="w-[90px]  h-6 object-cover" src="connect.png" />    
+                <button class="size-[45px] flex items-center justify-center bg-white rounded-full">
                     <svg viewBox="0 0 24 24" width="25px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 11H6C4.89543 11 4 11.8954 4 13V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V13C20 11.8954 19.1046 11 18 11H16M12 17V3M12 3L9 6M12 3L15 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+            <div class="w-full  max-w-[346px] flex flex-col items-center gap-4 mx-auto">
+                <div class="size-[140px] bg-neutral-800 rounded-full overflow-hidden">
+                <img class="w-full h-full object-cover rounded-2xl" src="avatar.png" />
+                </div>
+
+                <div class="text-center space-y-2">
+                <h1 class="text-white text-[26px] font-semibold font-archivo">Figma Canva</h1>
+                <p class="text-white text-[17px] font-medium font-archivo">
+                    Digital Product Designer with 5+ years of exp. designing solutions & making impact.
+                </p>
+                </div>
+
+                <nav class="flex gap-5 text-white text-2xl">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                </nav>
+
+                <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-3 py-1 bg-white/20 rounded-full text-white text-sm">Product designer</span>
+                <span class="px-3 py-1 bg-white/20 rounded-full text-white text-sm">UI/UX</span>
+                <span class="px-3 py-1 bg-white/20 rounded-full text-white text-sm">Motion designer</span>
+                </div>
+
+                <div class="flex items-center gap-2 text-white text-xs">
+                <i class="fa-solid fa-cake-candles"></i>
+                <span class="font-archivo">Birthday: Jan 10</span>
                 </div>
             </div>
         </div>
-        <div class="w-[800px] h-[70px] px-6 py-4 bg-gradient-to-r from-green-200 to-red-200 rounded-[20px] outline outline-1 outline-offset-[-1px] outline-green-600 flex justify-center items-center gap-2.5">
-            <div class="flex items-center justify-center h-10 w-10 bg-green-600 rounded-full">
-                <div class="text-white flex items-center justify-center">
-                    <svg height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52.373 52.373" xml:space="preserve" fill="#fff" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#fff;" d="M31.172,20.88l8.175-13.725c0.201-0.339,0.635-0.448,0.973-0.247 c0.337,0.201,0.447,0.635,0.247,0.972l-8.175,13.726c-0.2,0.338-0.635,0.448-0.973,0.247C31.082,21.652,30.972,21.216,31.172,20.88 z M33.642,25.907c0.169,0.354,0.592,0.505,0.945,0.336l14.433-6.849c0.355-0.169,0.505-0.591,0.337-0.946 c-0.169-0.354-0.591-0.505-0.945-0.336l-14.433,6.85C33.625,25.129,33.474,25.553,33.642,25.907z M51.764,32.896l-15.809-2.302 c-0.388-0.057-0.749,0.211-0.805,0.601c-0.057,0.389,0.212,0.747,0.6,0.804l15.809,2.302c0.389,0.055,0.749-0.213,0.806-0.601 C52.422,33.311,52.154,32.952,51.764,32.896z M26.549,14.968c-0.17-0.454-0.703-0.707-1.168-0.532 c-0.466,0.176-0.704,0.698-0.53,1.165l9.264,24.805c0.131,0.353,0.473,0.589,0.85,0.589c0.107,0,0.214-0.019,0.317-0.058 c0.467-0.176,0.705-0.698,0.531-1.164L26.549,14.968z M32.633,40.585c0.069,0.185,0.044,0.392-0.065,0.553 c-0.071,0.106-0.174,0.186-0.29,0.23c-0.063,0.022-0.129,0.036-0.198,0.037l-15.764,0.388l0.115,2.756 c0.011,0.271-0.155,0.506-0.395,0.596c-0.06,0.021-0.123,0.035-0.188,0.038l-9.054,0.382c-0.162,0.006-0.319-0.051-0.437-0.161 c-0.119-0.109-0.19-0.26-0.197-0.422l-0.122-2.911l-2.023,0.756c-0.314,0.118-0.665-0.044-0.783-0.358l-3.193-8.552 c-0.119-0.316,0.041-0.666,0.357-0.784l1.612-0.601l20.403-17.006c0.149-0.126,0.354-0.172,0.544-0.12 c0.191,0.05,0.345,0.189,0.414,0.374L32.633,40.585z M15.191,43.994l-0.093-2.168l-0.604,0.015 c0.012,0.063,0.026,0.127,0.029,0.193c0.016,0.374-0.138,0.744-0.422,1.014c-0.269,0.257-0.631,0.407-1.019,0.424l-3.631,0.151 c-0.802,0-1.456-0.577-1.487-1.312c-0.004-0.106,0.008-0.209,0.029-0.312l-0.741,0.019l0.098,2.307L15.191,43.994z M9.452,42.622 l0.027-0.001l3.561-0.15c0.143-0.005,0.279-0.059,0.372-0.148c0.044-0.041,0.117-0.129,0.111-0.246 c-0.003-0.081-0.048-0.151-0.11-0.21l-4.257,0.104C9.13,41.989,9.099,42,9.076,42.022c-0.044,0.041-0.117,0.129-0.111,0.246 C8.973,42.463,9.191,42.622,9.452,42.622z M31.195,40.212l-8.664-23.201L2.71,33.532c-0.053,0.043-0.114,0.079-0.178,0.103 l-1.14,0.425l2.769,7.413l1.615-0.604c0.063-0.023,0.13-0.036,0.198-0.038l9.643-0.237c0.013-0.001,0.024-0.006,0.038-0.005 c0.017-0.002,0.035,0.002,0.053,0.002L31.195,40.212z"></path> </g> </g></svg>
-                </div>
+      </div>
+    </section>
+
+    <!-- Announcement -->
+    <section class="w-full max-w-[700px] px-6 py-4 bg-gradient-to-r from-green-200 to-red-200 rounded-[20px] flex items-center gap-4">
+      <div class="h-10 w-10 bg-green-600 rounded-full flex items-center justify-center">
+        <svg height="22px" width="22px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52.373 52.373" xml:space="preserve" fill="#fff" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#fff;" d="M31.172,20.88l8.175-13.725c0.201-0.339,0.635-0.448,0.973-0.247 c0.337,0.201,0.447,0.635,0.247,0.972l-8.175,13.726c-0.2,0.338-0.635,0.448-0.973,0.247C31.082,21.652,30.972,21.216,31.172,20.88 z M33.642,25.907c0.169,0.354,0.592,0.505,0.945,0.336l14.433-6.849c0.355-0.169,0.505-0.591,0.337-0.946 c-0.169-0.354-0.591-0.505-0.945-0.336l-14.433,6.85C33.625,25.129,33.474,25.553,33.642,25.907z M51.764,32.896l-15.809-2.302 c-0.388-0.057-0.749,0.211-0.805,0.601c-0.057,0.389,0.212,0.747,0.6,0.804l15.809,2.302c0.389,0.055,0.749-0.213,0.806-0.601 C52.422,33.311,52.154,32.952,51.764,32.896z M26.549,14.968c-0.17-0.454-0.703-0.707-1.168-0.532 c-0.466,0.176-0.704,0.698-0.53,1.165l9.264,24.805c0.131,0.353,0.473,0.589,0.85,0.589c0.107,0,0.214-0.019,0.317-0.058 c0.467-0.176,0.705-0.698,0.531-1.164L26.549,14.968z M32.633,40.585c0.069,0.185,0.044,0.392-0.065,0.553 c-0.071,0.106-0.174,0.186-0.29,0.23c-0.063,0.022-0.129,0.036-0.198,0.037l-15.764,0.388l0.115,2.756 c0.011,0.271-0.155,0.506-0.395,0.596c-0.06,0.021-0.123,0.035-0.188,0.038l-9.054,0.382c-0.162,0.006-0.319-0.051-0.437-0.161 c-0.119-0.109-0.19-0.26-0.197-0.422l-0.122-2.911l-2.023,0.756c-0.314,0.118-0.665-0.044-0.783-0.358l-3.193-8.552 c-0.119-0.316,0.041-0.666,0.357-0.784l1.612-0.601l20.403-17.006c0.149-0.126,0.354-0.172,0.544-0.12 c0.191,0.05,0.345,0.189,0.414,0.374L32.633,40.585z M15.191,43.994l-0.093-2.168l-0.604,0.015 c0.012,0.063,0.026,0.127,0.029,0.193c0.016,0.374-0.138,0.744-0.422,1.014c-0.269,0.257-0.631,0.407-1.019,0.424l-3.631,0.151 c-0.802,0-1.456-0.577-1.487-1.312c-0.004-0.106,0.008-0.209,0.029-0.312l-0.741,0.019l0.098,2.307L15.191,43.994z M9.452,42.622 l0.027-0.001l3.561-0.15c0.143-0.005,0.279-0.059,0.372-0.148c0.044-0.041,0.117-0.129,0.111-0.246 c-0.003-0.081-0.048-0.151-0.11-0.21l-4.257,0.104C9.13,41.989,9.099,42,9.076,42.022c-0.044,0.041-0.117,0.129-0.111,0.246 C8.973,42.463,9.191,42.622,9.452,42.622z M31.195,40.212l-8.664-23.201L2.71,33.532c-0.053,0.043-0.114,0.079-0.178,0.103 l-1.14,0.425l2.769,7.413l1.615-0.604c0.063-0.023,0.13-0.036,0.198-0.038l9.643-0.237c0.013-0.001,0.024-0.006,0.038-0.005 c0.017-0.002,0.035,0.002,0.053,0.002L31.195,40.212z"></path> </g> </g></svg>
+      </div>
+      <p class="text-neutral-900 text-sm font-medium font-archivo">
+        Limited spots available for my exclusive mentorship program! Apply before January 31st.
+      </p>
+    </section>
+
+    <!-- Links -->
+    <section class="w-full max-w-[700px] space-y-3">
+      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
+        <div class="flex items-center w-full justify-between py-2 px-6">
+            <div class="w-1/3">
+                <img src="avatar.png" class="w-14 rounded-md" />
             </div>
-            <div class="w-[702px] h-[26px] justify-center text-neutral-900 text-base font-medium font-archivo leading-6">Limited spots available for my exclusive mentorship program! Apply before January 31st.</div>
-        </div>
-        <div class="bg-emerald-50/20 text-white font-semibold rounded-[20px] w-[800px]" >
-            <div class="flex items-center justify-between py-2 px-6 font-archivo">
-                <img src="avatar.png" alt="" srcset="" class="w-14 rounded-md">
-                <p>Portolio</p>
-                <div class="rotate-90">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
+            <div class="w-1/3 text-center">
+                <p>Portfolio</p>
+            </div>
+            <div class="w-1/3 text-right">
+                <i class="fa-solid fa-ellipsis rotate-90"></i>
             </div>
         </div>
-        <div class="bg-emerald-50/20 text-white font-semibold rounded-[20px] w-[800px]" >
-            <div class="flex items-center justify-between py-2 px-6 font-archivo">
-                <img src="avatar.png" alt="" srcset="" class="w-14 rounded-md">
+      </article>
+
+      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
+        <div class="flex items-center justify-between py-2 px-6">
+         <div class="w-1/3">
+                <img src="avatar.png" class="w-14 rounded-md" />
+            </div>
+            <div class="w-1/3 text-center">
                 <p>Figma Tutorials</p>
-                <div class="rotate-90">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
+            </div>
+            <div class="w-1/3 text-right">
+                <i class="fa-solid fa-ellipsis rotate-90"></i>
             </div>
         </div>
-        <div class="bg-emerald-50/20 text-white font-semibold rounded-[20px] w-[800px]" >
-            <div class="flex items-center justify-between py-2 px-6 font-archivo">
-                <img src="avatar.png" alt="" srcset="" class="w-14 rounded-md">
+      </article>
+
+      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
+        <div class="flex items-center justify-between py-2 px-6">
+          <div class="w-1/3">
+                <img src="avatar.png" class="w-14 rounded-md" />
+            </div>
+            <div class="w-1/3 text-center">
                 <p>Website</p>
-                <div class="rotate-90">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
+            </div>
+            <div class="w-1/3 text-right">
+                <i class="fa-solid fa-ellipsis rotate-90"></i>
             </div>
         </div>
-        <div class="bg-emerald-50/20 text-white font-semibold rounded-[20px] w-[800px]" >
-            <div class="flex items-center justify-between px-6 py-2 font-archivo">
-                <img src="avatar.png" alt="" srcset="" class="w-14 rounded-md">
+      </article>
+
+      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
+        <div class="flex items-center justify-between py-2 px-6">
+          <div class="w-1/3">
+                <img src="avatar.png" class="w-14 rounded-md" />
+            </div>
+            <div class="w-1/3 text-center">
                 <p>Resume</p>
-                <div class="rotate-90">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
             </div>
+            <div class="w-1/3 text-right">
+                <i class="fa-solid fa-ellipsis rotate-90"></i>
+            </div>
+        </div>
+      </article>
+
+      <div class="w-full inline-flex flex-col gap-4 pt-5  md:px-0">
+        <div class="inline-flex items-center gap-x-2">
+            <div class=" text-2xl text-orange-400">
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+            <h2 class="text-white text-xl font-semibold font-archivo">
+                Upcoming Events
+            </h2>
         </div>
 
-        <div class="w-[800px] inline-flex flex-col justify-start items-start gap-6 mt-4">
-            <div class="w-[213px] inline-flex justify-start items-center gap-1.5">
-                <div class="size-10 text-2xl ">
-                    <div class=" text-orange-400">
-                        <i class="fa-regular fa-calendar"></i>
-                    </div>
-                </div>
-                <div class="w-[346px] justify-start text-white text-xl font-semibold font-archivo leading-6">Upcoming Events</div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-4">
-                <div class="w-[800px] relative bg-emerald-50/20 rounded-[20px]">
-                    <div class="flex justify-start items-center gap-[11px] p-4">
-                        <div class="size-[65px] relative bg-white rounded-xl"></div>
-                        <div class="w-[227px] inline-flex flex-col justify-start items-start">
-                            <div class="justify-start text-white text-base font-semibold font-archivo leading-6">Business Growth Summit 2024</div>
-                            <div class=" justify-center text-zinc-400/50 text-xs font-normal font-archivo leading-6">March 5,2025</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-[800px] relative bg-emerald-50/20 rounded-[20px]">
-                    <div class="flex justify-start items-center gap-[11px] p-4">
-                        <div class="size-[65px] relative bg-white rounded-xl"></div>
-                        <div class="w-[227px] inline-flex flex-col justify-start items-start">
-                            <div class="justify-start text-white text-base font-semibold font-archivo leading-6">Business Growth Summit 2024</div>
-                            <div class=" justify-center text-zinc-400/50 text-xs font-normal font-archivo leading-6">March 5,2025</div>
-                        </div>
-                    </div>
+        <div class="flex flex-col gap-4 w-full">
+            <div class="w-full bg-emerald-50/20 rounded-[20px]">
+            <div class="flex items-center gap-3 p-4">
+                <div class="size-[65px] bg-white rounded-xl shrink-0"></div>
+                <div class="flex flex-col">
+                <p class="text-white text-base font-semibold font-archivo">
+                    Business Growth Summit 2024
+                </p>
+                <p class="text-zinc-400/50 text-xs font-archivo">
+                    March 5, 2025
+                </p>
                 </div>
             </div>
-        </div>   
-        <div class="w-[154px] h-10 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-200 flex justify-center items-center gap-[7px]">
-            <div class="text-gray-500">
-                <i class="fa-solid fa-qrcode"></i>
             </div>
-            <div class="w-[108px] justify-center text-gray-500 text-base font-semibold font-archivo leading-6">View QR Code</div>
-        </div>
-        
-        <div class="bg-orange-500 text-white font-semibold rounded-[20px] w-[800px]" >
-            <div class="flex items-center justify-center px-6 py-4 gap-x-4">
-                <button class="font-inter font-semibold">Get Started </button> <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        <div class="flex items-center justify-center">
-            <p class="text-white font-inter">Join ConnectNigeria Today</p>
-        </div>
-        <div class="flex items-center justify-center mt-4">
-            <p class="text-white font-inter">Powered by <span class="underline">ConnectNigeria</span></p>
-        </div>
 
+            <!-- Event Card -->
+            <div class="w-full bg-emerald-50/20 rounded-[20px]">
+            <div class="flex items-center gap-3 p-4">
+                <div class="size-[65px] bg-white rounded-xl shrink-0"></div>
+                <div class="flex flex-col">
+                <p class="text-white text-base font-semibold font-archivo">
+                    Business Growth Summit 2024
+                </p>
+                <p class="text-zinc-400/50 text-xs font-archivo">
+                    March 5, 2025
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <div class="px-4 md:px-0">
+      <div class="h-10 px-4 bg-white rounded-2xl outline outline-1 outline-zinc-200 flex justify-center items-center gap-2">
+          <i class="fa-solid fa-qrcode text-gray-500"></i>
+          <span class="text-gray-500 text-base font-semibold font-archivo">
+             View QR Code
+          </span>
+      </div>
     </div>
+    <section class="w-full max-w-[700px] space-y-3">
+        <article class="flex flex-col items-center text-white space-y-3 font-inter">
+            <div class="w-full max-w-[800px]">
+                <button class="bg-orange-500 px-8 py-4 rounded-[20px] w-full font-semibold">
+                Get Started <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+    
+            <div class="w-full max-w-[700px] text-center space-y-2">
+                <p>Join ConnectNigeria Today</p>
+                <p class="pt-5">Powered by <span class="underline">ConnectNigeria</span></p>
+            </div>
+        </article>
+    </section>
+  </main>
+
+  <div class="absolute hidden lg:block right-5 bottom-5">
+    <img src="scanme.png" class="object-cover" alt="">
+  </div>
 </body>
 </html>
