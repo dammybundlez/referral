@@ -8,195 +8,1153 @@
   <script src="https://kit.fontawesome.com/c4993cb090.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="relative min-h-screen bg-black overflow-x-hidden">
+<body class="w-full">
+    <div class="flex md:flex-row w-full justify-between">
+      <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 sm:w-2/5 w-3/5 bg-white border-r border-gray-200 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 md:sticky md:translate-x-0 md:h-screen">
+        <nav class="px-6 pt-4 space-y-2">
+          <div class="md:hidden pb-3">
+            <button
+              id="closeSidebar"
+              aria-label="Close menu"
+              class="px-3 py-1 rounded border border-zinc-200 text-black"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="w-full p-3 bg-orange-100 rounded-xl flex items-center gap-2 text-orange-400 font-medium font-archivo"
+              >
+                <img src="dashboard.svg" alt="" class="w-6 h-6">
+                Dashboard
+              </a>
+            </li>
 
-  <div
-    class="absolute top-0 left-0 w-full md:h-[50vh] h-[40vh] bg-no-repeat bg-top bg-cover"
-    style="background-image: url('bg.png');"
-  ></div>
+            <li>
+              <a
+                href="#"
+                class="w-full p-3 rounded-xl flex items-center gap-2 text-gray-500 font-medium font-archivo hover:bg-gray-50"
+              >
+                <img src="star.svg" alt="" class="w-6 h-6">
+                Requests
+              </a>
+            </li>
 
-  <main class="relative z-10 flex flex-col items-center py-5 gap-5 px-4">
+            <li>
+              <a
+                href="#"
+                class="w-full p-3 rounded-xl flex items-center gap-2 text-gray-500 font-medium font-archivo hover:bg-gray-50"
+              >
+                <img src="star.svg" alt="" class="w-6 h-6">
+                My Reviews
+              </a>
+            </li>
+          </ul>
 
-    <!-- Profile Card -->
-    <section class="w-full max-w-[700px]">
-      <div class=" bg-gradient-to-r from-green-200 to-red-200 rounded-[20px] outline outline-1 outline-offset-[-1px] outline-yellow-600">
-        <div class="w-full md:py-10 py-5 flex flex-col justify-between items-center md:px-10 px-5  bg-black rounded-[20px] outline outline-1 outline-offset-[-1px] outline-orange-300 overflow-hidden gap-6">
-            <div class="flex justify-between items-center w-full">
-                <img class="w-[90px]  h-6 object-cover" src="connect.png" />    
-                <button class="size-[45px] flex items-center justify-center bg-white rounded-full">
-                    <svg viewBox="0 0 24 24" width="25px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 11H6C4.89543 11 4 11.8954 4 13V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V13C20 11.8954 19.1046 11 18 11H16M12 17V3M12 3L9 6M12 3L15 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          <hr class="border-neutral-300 my-4" />
+
+          <button class="w-full p-3 rounded-lg flex justify-between items-center text-gray-500 font-medium font-archivo hover:bg-gray-50">
+            <span class="flex items-center gap-2">
+              <span class="size-6 bg-gray-500 rounded-sm text-white border-sm"><i class="fa-solid fa-border-all"></i></span>
+              More on CN
+            </span>
+            <span class="text-gray-500"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+        </nav>
+
+        <div class="px-6 pb-6 space-y-6">
+          <div class="space-y-4">
+            <button class="w-full p-3 rounded-xl flex items-center gap-2 text-gray-500 font-medium font-archivo hover:bg-gray-50">
+              <span class="text-xl text-gray-500 rounded-sm"><i class="fa-solid fa-gear"></i></span>
+              Settings
+            </button>
+
+            <hr class="border-neutral-300" />
+          </div>
+
+          <button class="w-full h-10 rounded-xl border border-zinc-200 flex items-center justify-center gap-2 font-semibold font-archivo text-black">
+            <span class="border-black rounded-sm">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+            View Page
+          </button>
+        </div>
+      </aside>
+
+      <main class="min-h-screen w-full bg-neutral-50 py-5 px-3 font-archivo">
+        <div class="md:hidden flex items-center justify-between mb-4">
+          <button
+            id="openSidebar"
+            aria-label="Open menu"
+            class="px-3 py-1 rounded border border-zinc-200 bg-white"
+          >
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+        <section class="lg:max-w-[39rem] md:max-w-full w-full  space-y-8">
+          <!-- Header -->
+          <header class="space-y-2">
+            <h1 class="text-3xl font-bold text-zinc-900 font-archivo">
+              Manage Referral Page
+            </h1>
+            <p class="text-sm text-gray-500">
+              Customize what visitors see on your referral page
+            </p>
+          </header>
+
+          <nav class="bg-white rounded-xl flex flex-wrap md:justify-between items-center p-1 font-archivo w-full">
+            <button data-tab="profile" class="tab-btn active px-2 py-2 rounded-lg text-white text-xs">
+              <span>
+                <i class="fa-regular fa-user pr-[2px]"></i>
+              </span>
+              Profile
+            </button>
+            <button data-tab="social" class="tab-btn px-2 py-2 rounded-lg text-gray-500 text-xs ">
+              <span>
+                <i class="fa-solid fa-globe pr-[2px]"></i>
+              </span>
+              Social
+            </button>
+            <button data-tab="links" class="tab-btn px-1 py-2 rounded-lg text-gray-500 text-xs ">
+              <span>
+                <i class="fa-solid fa-link pr-[2px]"></i>
+              </span>
+              Links
+            </button>
+            <button data-tab="event" class="tab-btn px-1 py-2 rounded-lg text-gray-500 text-xs ">
+              <span>
+                <i class="fa-regular fa-calendar pr-[2px]"></i>
+              </span>
+              Events
+            </button>
+            <button data-tab="announce" class="tab-btn px-1 py-2 rounded-lg text-gray-500 text-xs ">
+              <span>
+                <i class="fa-regular fa-sun pr-[2px]"></i>
+              </span>
+              Announce
+            </button>
+            <button data-tab="banner" class="tab-btn px-1 py-2 rounded-lg text-gray-500 text-xs ">
+              <span>
+                <i class="fa-regular fa-image pr-[2px]"></i>
+              </span>
+              Banner
+            </button>
+            <button data-tab="sections" class="tab-btn px-1 py-2 rounded-lg text-gray-500 text-xs ">
+              <span>
+                <i class="fa-solid fa-gear pr-[2px]"></i>
+              </span>
+              Sections
+            </button>
+          </nav>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full tab-content" id="profile">
+
+            <header>
+              <h2 class="text-2xl font-bold text-zinc-900">
+                Profile Information
+              </h2>
+              <p class="text-sm text-gray-500">
+                This information will be displayed on your referral page
+              </p>
+            </header>
+            <form class="space-y-6 pt-5">
+              <div class="space-y-1">
+                <label class="text-sm font-medium text-black">
+                  Display Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="w-full px-3 py-2 rounded-lg border-[1.5px] focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+
+              <!-- Bio -->
+              <div class="space-y-1">
+                <label class="text-sm font-medium text-black">
+                  Bio <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  rows="4"
+                  placeholder="Tell visitors about yourself..."
+                  class="w-full px-3 py-2 rounded-lg border-[1.5px] resize-none focus:outline-none focus:ring-2 focus:ring-orange-500"
+                ></textarea>
+                <p class="text-xs text-gray-500">
+                  85 / 150 characters
+                </p>
+              </div>
+
+              <!-- Birthday -->
+              <div class="space-y-1">
+                <label class="text-sm font-medium text-black">
+                  Birthday
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g Jan 10"
+                  class="w-full px-3 py-2 rounded-lg border-[1.5px] focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+
+              <!-- Tags -->
+              <div class="space-y-1">
+                <label class="text-sm font-medium text-black">
+                  Tags
+                </label>
+                <input
+                  type="text"
+                  placeholder="Add a tag"
+                  class="w-full px-3 py-2 rounded-lg border-[1.5px] focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+
+            </form>
+          </section>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full tab-content hidden" id="social">
+            <header class="space-y-1">
+              <h2 class="text-2xl font-bold text-zinc-900">Social Media Links</h2>
+              <p class="text-sm text-gray-500">
+                Add your social media profiles. Only enabled links will appear on your page.
+              </p>
+            </header>
+
+            <form id="socialForm" class="space-y-6 pt-5">
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-instagram"></i>
+                    </span>
+                    Instagram
+                  </label>
+
+                  <button
+                    type="button"
+                    class="toggle"
+                    aria-pressed="false"
+                    data-toggle
+                  >
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://instagram.com/username"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </span>
+                    Facebook
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://facebook.com/username"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </span>
+                    Twitter / X
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://x.com/username"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </span>
+                    LinkedIn
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://linkedin.com/in/username"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-youtube"></i>
+                    </span>
+                    YouTube
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://youtube.com/@channel"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-tiktok"></i>
+                    </span>
+                    TikTok
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://tiktok.com/@username"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </span>
+                    WhatsApp
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://wa.me/234000000000"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+              <fieldset class="social-item">
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center gap-2 text-sm font-medium">
+                    <span class="pr-1 text-gray-400 rounded-sm">
+                      <i class="fa-brands fa-telegram"></i>
+                    </span>
+                    Telegram
+                  </label>
+
+                  <button type="button" class="toggle" aria-pressed="false" data-toggle>
+                    <span></span>
+                  </button>
+                </div>
+
+                <input
+                  type="url"
+                  placeholder="https://t.me/username"
+                  class="input"
+                  disabled
+                />
+              </fieldset>
+
+            </form>
+          </section>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full hidden tab-content" id="links">
+            <header class="space-y-1">
+              <h2 class="text-2xl font-bold text-zinc-900 font-archivo">
+                Website Links
+              </h2>
+              <p class="text-sm text-gray-500">
+                Add custom links to showcase your work, products, or services
+              </p>
+            </header>
+
+            <form class="space-y-6 pt-5">
+              <fieldset class="border border-zinc-200 rounded-xl p-4 space-y-2">
+                <div class="flex items-center justify-between">
+                  <legend class="text-sm font-medium text-black">
+                    Add New Link
+                  </legend>
+                  <button
+                    type="button"
+                    aria-pressed="false"
+                    class="toggle"
+                    data-toggle
+                  >
+                    <span></span>
+                  </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                  <input
+                    type="text"
+                    placeholder="Link title"
+                    class="input"
+                    disabled
+                  />
+                  <input
+                    type="url"
+                    placeholder="https://..."
+                    class="input"
+                    disabled
+                  />
+                </div>
+
+                <div class="space-y-6 pt-5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium">Thumbnail</span>
+
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      class="toggle"
+                      data-toggle
+                    >
+                      <span></span>
+                    </button>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-3">
+                    <img
+                      src="avatar.png"
+                      class="w-12 h-12 rounded-full object-cover"
+                      alt="Thumbnail preview"
+                    />
+
+                    <div class="flex gap-3">
+                      <button type="button" class="btn-secondary">
+                        Add Picture
+                      </button>
+
+                      <button type="button" class="btn-primary">
+                        Add Link
+                        <span class="pr-1 text-white pl-2 rounded-sm">
+                          <i class="fa-solid fa-plus"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="border border-zinc-200 rounded-xl p-4 space-y-2">
+                <div class="flex items-center justify-between">
+                  <legend class="text-sm font-medium text-black">
+                    Portfolio
+                  </legend>
+
+                  <div class="inline-flex items-center space-x-3">
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      class="toggle"
+                      data-toggle
+                    >
+                      <span></span>
+                    </button>
+                    <span class="w-5 h-5">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 11V17" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Portfolio"
+                    class="input"
+                    disabled
+                  />
+                  <input
+                    type="url"
+                    placeholder="https://portfoliofigcav.com"
+                    class="input"
+                    disabled
+                  />
+                </div>
+
+                <div class="space-y-3 pt-5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium">Thumbnail</span>
+
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      class="toggle"
+                      data-toggle
+                    >
+                      <span></span>
+                    </button>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-3">
+                    <img
+                      src="avatar.png"
+                      class="w-12 h-12 rounded-full object-cover"
+                      alt="Thumbnail preview"
+                    />
+
+                    <div class="flex gap-3">
+                      <button type="button" class="btn-secondary">
+                        Change Picture
+                      </button>
+
+                      <button type="button" class="btn-danger border">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="border border-zinc-200 rounded-xl p-4 space-y-2">
+                <div class="flex items-center justify-between">
+                  <legend class="text-sm font-medium text-black">
+                    Website
+                  </legend>
+
+                  <!-- Toggle -->
+                  <div class="inline-flex items-center space-x-3">
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      class="toggle"
+                      data-toggle
+                    >
+                      <span></span>
+                    </button>
+                    <span class="w-5 h-5">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 11V17" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Website"
+                    class="input"
+                    disabled
+                  />
+                  <input
+                    type="url"
+                    placeholder="https://designerbabe.com"
+                    class="input"
+                    disabled
+                  />
+                </div>
+
+                <div class="space-y-3 pt-5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium">Thumbnail</span>
+
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      class="toggle"
+                      data-toggle
+                    >
+                      <span></span>
+                    </button>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-3">
+                    <img
+                      src="avatar.png"
+                      class="w-12 h-12 rounded-full object-cover"
+                      alt="Thumbnail preview"
+                    />
+
+                    <div class="flex gap-3">
+                      <button type="button" class="btn-secondary">
+                        Change Picture
+                      </button>
+
+                      <button type="button" class="btn-danger border">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </section>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full hidden tab-content" id="announce">
+            <header class="space-y-1">
+              <h2 class="text-2xl font-bold text-zinc-900 font-archivo">
+                Announcement Banner
+              </h2>
+              <p class="text-sm text-gray-500">
+                Share a special message or promotion with your visitors
+              </p>
+            </header>
+            <form class="space-y-6 pt-5">
+              <div class="flex items-center justify-between gap-4">
+                <label for="announcement-toggle" class="text-sm text-black">
+                  Enable Announcement
+                </label>
+
+                <button
+                  id="announcement-toggle"
+                  type="button"
+                  aria-pressed="false"
+                  class="toggle"
+                  data-toggle
+                >
+                  <span></span>
                 </button>
-            </div>
-            <div class="w-full  max-w-[346px] flex flex-col items-center gap-4 mx-auto">
-                <div class="size-[140px] bg-neutral-800 rounded-full overflow-hidden">
-                <img class="w-full h-full object-cover rounded-2xl" src="avatar.png" />
-                </div>
+              </div>
 
-                <div class="text-center space-y-2">
-                <h1 class="text-white text-[26px] font-semibold font-archivo">Figma Canva</h1>
-                <p class="text-white text-[17px] font-medium font-archivo">
-                    Digital Product Designer with 5+ years of exp. designing solutions & making impact.
+              <div class="space-y-2">
+                <label
+                  for="announcement-message"
+                  class="text-sm text-black"
+                >
+                  Announcement Message
+                </label>
+
+                <textarea
+                  id="announcement-message"
+                  rows="4"
+                  maxlength="150"
+                  placeholder="Share something exciting with your visitors..."
+                  class="w-full resize-none px-3.5 py-3 text-sm rounded-lg border border-gray-300
+                        focus:outline-none focus:ring-2 focus:ring-orange-500"
+                ></textarea>
+
+                <div class="text-xs text-gray-500 text-left">
+                  <span id="char-count">0</span>/150 characters
+                </div>
+              </div>
+
+            </form>
+          </section>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full hidden tab-content" id="banner">
+            <header class="space-y-1">
+              <h2 class="text-2xl font-bold text-zinc-900">Header Banner</h2>
+              <p class="text-sm text-gray-500">
+                Upload a banner image to promote something on your referral page
+              </p>
+            </header>
+
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-black">Enable Banner</span>
+              <button id="bannerToggle" aria-pressed="true" class="toggle">
+                <span></span>
+              </button>
+            </div>
+
+            <label
+              id="uploadState"
+              for="bannerInput"
+              class="block border border-dashed border-gray-300 rounded-xl p-6
+                    text-center cursor-pointer hover:border-orange-500 transition"
+            >
+              <div class="space-y-3">
+                <div class="mx-auto w-6 h-6 rounded-lg flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Upload-2</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Upload-2"> <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24"> </rect> <line x1="12" y1="14" x2="12" y2="20" id="Path" stroke="#fc8102" stroke-width="2" stroke-linecap="round"> </line> <path d="M15,15 L12.7071,12.7071 C12.3166,12.3166 11.6834,12.3166 11.2929,12.7071 L9,15" id="Path" stroke="#fc8102" stroke-width="2" stroke-linecap="round"> </path> <path d="M19.9495,16 C20.5978,15.3647 21,14.4793 21,13.5 C21,11.567 19.433,10 17.5,10 C17.3078,10 17.1192,10.0155 16.9354,10.0453 C16.4698,6.63095 13.5422,4 10,4 C6.13401,4 3,7.13401 3,11 C3,12.9587 3.80447,14.7295 5.10102,16" id="Path" stroke="#fc8102" stroke-width="2" stroke-linecap="round"> </path> </g> </g> </g></svg>
+                </div>
+                <p class="text-sm">
+                  <span class="text-orange-500 font-semibold">Click to upload</span>
+                  <span class="text-gray-500"> or drag and drop</span>
                 </p>
-                </div>
-
-                <nav class="flex gap-5 text-white text-2xl">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
-                <i class="fa-brands fa-x-twitter"></i>
-                </nav>
-
-                <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-3 py-1 bg-white/20 rounded-full text-white text-sm">Product designer</span>
-                <span class="px-3 py-1 bg-white/20 rounded-full text-white text-sm">UI/UX</span>
-                <span class="px-3 py-1 bg-white/20 rounded-full text-white text-sm">Motion designer</span>
-                </div>
-
-                <div class="flex items-center gap-2 text-white text-xs">
-                <i class="fa-solid fa-cake-candles"></i>
-                <span class="font-archivo">Birthday: Jan 10</span>
-                </div>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Announcement -->
-    <section class="w-full max-w-[700px] px-6 py-4 bg-gradient-to-r from-green-200 to-red-200 rounded-[20px] flex items-center gap-4">
-      <div class="h-10 w-10 bg-green-600 rounded-full flex items-center justify-center">
-        <svg height="22px" width="22px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52.373 52.373" xml:space="preserve" fill="#fff" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#fff;" d="M31.172,20.88l8.175-13.725c0.201-0.339,0.635-0.448,0.973-0.247 c0.337,0.201,0.447,0.635,0.247,0.972l-8.175,13.726c-0.2,0.338-0.635,0.448-0.973,0.247C31.082,21.652,30.972,21.216,31.172,20.88 z M33.642,25.907c0.169,0.354,0.592,0.505,0.945,0.336l14.433-6.849c0.355-0.169,0.505-0.591,0.337-0.946 c-0.169-0.354-0.591-0.505-0.945-0.336l-14.433,6.85C33.625,25.129,33.474,25.553,33.642,25.907z M51.764,32.896l-15.809-2.302 c-0.388-0.057-0.749,0.211-0.805,0.601c-0.057,0.389,0.212,0.747,0.6,0.804l15.809,2.302c0.389,0.055,0.749-0.213,0.806-0.601 C52.422,33.311,52.154,32.952,51.764,32.896z M26.549,14.968c-0.17-0.454-0.703-0.707-1.168-0.532 c-0.466,0.176-0.704,0.698-0.53,1.165l9.264,24.805c0.131,0.353,0.473,0.589,0.85,0.589c0.107,0,0.214-0.019,0.317-0.058 c0.467-0.176,0.705-0.698,0.531-1.164L26.549,14.968z M32.633,40.585c0.069,0.185,0.044,0.392-0.065,0.553 c-0.071,0.106-0.174,0.186-0.29,0.23c-0.063,0.022-0.129,0.036-0.198,0.037l-15.764,0.388l0.115,2.756 c0.011,0.271-0.155,0.506-0.395,0.596c-0.06,0.021-0.123,0.035-0.188,0.038l-9.054,0.382c-0.162,0.006-0.319-0.051-0.437-0.161 c-0.119-0.109-0.19-0.26-0.197-0.422l-0.122-2.911l-2.023,0.756c-0.314,0.118-0.665-0.044-0.783-0.358l-3.193-8.552 c-0.119-0.316,0.041-0.666,0.357-0.784l1.612-0.601l20.403-17.006c0.149-0.126,0.354-0.172,0.544-0.12 c0.191,0.05,0.345,0.189,0.414,0.374L32.633,40.585z M15.191,43.994l-0.093-2.168l-0.604,0.015 c0.012,0.063,0.026,0.127,0.029,0.193c0.016,0.374-0.138,0.744-0.422,1.014c-0.269,0.257-0.631,0.407-1.019,0.424l-3.631,0.151 c-0.802,0-1.456-0.577-1.487-1.312c-0.004-0.106,0.008-0.209,0.029-0.312l-0.741,0.019l0.098,2.307L15.191,43.994z M9.452,42.622 l0.027-0.001l3.561-0.15c0.143-0.005,0.279-0.059,0.372-0.148c0.044-0.041,0.117-0.129,0.111-0.246 c-0.003-0.081-0.048-0.151-0.11-0.21l-4.257,0.104C9.13,41.989,9.099,42,9.076,42.022c-0.044,0.041-0.117,0.129-0.111,0.246 C8.973,42.463,9.191,42.622,9.452,42.622z M31.195,40.212l-8.664-23.201L2.71,33.532c-0.053,0.043-0.114,0.079-0.178,0.103 l-1.14,0.425l2.769,7.413l1.615-0.604c0.063-0.023,0.13-0.036,0.198-0.038l9.643-0.237c0.013-0.001,0.024-0.006,0.038-0.005 c0.017-0.002,0.035,0.002,0.053,0.002L31.195,40.212z"></path> </g> </g></svg>
-      </div>
-      <p class="text-neutral-900 text-sm font-medium font-archivo">
-        Limited spots available for my exclusive mentorship program! Apply before January 31st.
-      </p>
-    </section>
-
-    <!-- Links -->
-    <section class="w-full max-w-[700px] space-y-3">
-      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
-        <div class="flex items-center w-full justify-between py-2 px-6">
-            <div class="w-1/3">
-                <img src="avatar.png" class="w-14 rounded-md" />
-            </div>
-            <div class="w-1/3 text-center">
-                <p>Portfolio</p>
-            </div>
-            <div class="w-1/3 text-right">
-                <i class="fa-solid fa-ellipsis rotate-90"></i>
-            </div>
-        </div>
-      </article>
-
-      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
-        <div class="flex items-center justify-between py-2 px-6">
-         <div class="w-1/3">
-                <img src="avatar.png" class="w-14 rounded-md" />
-            </div>
-            <div class="w-1/3 text-center">
-                <p>Figma Tutorials</p>
-            </div>
-            <div class="w-1/3 text-right">
-                <i class="fa-solid fa-ellipsis rotate-90"></i>
-            </div>
-        </div>
-      </article>
-
-      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
-        <div class="flex items-center justify-between py-2 px-6">
-          <div class="w-1/3">
-                <img src="avatar.png" class="w-14 rounded-md" />
-            </div>
-            <div class="w-1/3 text-center">
-                <p>Website</p>
-            </div>
-            <div class="w-1/3 text-right">
-                <i class="fa-solid fa-ellipsis rotate-90"></i>
-            </div>
-        </div>
-      </article>
-
-      <article class="bg-emerald-50/20 text-white font-semibold rounded-[20px]">
-        <div class="flex items-center justify-between py-2 px-6">
-          <div class="w-1/3">
-                <img src="avatar.png" class="w-14 rounded-md" />
-            </div>
-            <div class="w-1/3 text-center">
-                <p>Resume</p>
-            </div>
-            <div class="w-1/3 text-right">
-                <i class="fa-solid fa-ellipsis rotate-90"></i>
-            </div>
-        </div>
-      </article>
-
-      <div class="w-full inline-flex flex-col gap-4 pt-5  md:px-0">
-        <div class="inline-flex items-center gap-x-2">
-            <div class=" text-2xl text-orange-400">
-                <i class="fa-regular fa-calendar"></i>
-            </div>
-            <h2 class="text-white text-xl font-semibold font-archivo">
-                Upcoming Events
-            </h2>
-        </div>
-
-        <div class="flex flex-col gap-4 w-full">
-            <div class="w-full bg-emerald-50/20 rounded-[20px]">
-            <div class="flex items-center gap-3 p-4">
-                <div class="size-[65px] bg-white rounded-xl shrink-0"></div>
-                <div class="flex flex-col">
-                <p class="text-white text-base font-semibold font-archivo">
-                    Business Growth Summit 2024
+                <p class="text-xs text-gray-500">
+                  SVG, PNG, JPG or GIF (max. 800×400px)
                 </p>
-                <p class="text-zinc-400/50 text-xs font-archivo">
-                    March 5, 2025
-                </p>
-                </div>
-            </div>
-            </div>
+              </div>
+              <input id="bannerInput" type="file" accept="image/*" class="hidden" />
+            </label>
 
-            <!-- Event Card -->
-            <div class="w-full bg-emerald-50/20 rounded-[20px]">
-            <div class="flex items-center gap-3 p-4">
-                <div class="size-[65px] bg-white rounded-xl shrink-0"></div>
-                <div class="flex flex-col">
-                <p class="text-white text-base font-semibold font-archivo">
-                    Business Growth Summit 2024
-                </p>
-                <p class="text-zinc-400/50 text-xs font-archivo">
-                    March 5, 2025
-                </p>
+            <div id="previewState" class="hidden space-y-4">
+              <div class="relative rounded-xl overflow-hidden border border-gray-200">
+                <img
+                  id="bannerPreview"
+                  class="w-full h-40 object-cover cursor-pointer"
+                  alt="Banner preview"
+                  title="Click to remove"
+                />
+              </div>
+
+              <p class="text-sm text-gray-500">
+                Click the image to remove or upload a new one below
+              </p>
+
+              <button
+                id="replaceBtn"
+                type="button"
+                class="w-full h-10 rounded-2xl border border-zinc-200
+                      flex items-center justify-center gap-2 text-sm font-medium"
+              >
+              <span class="w-5 h-5">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="upload"> <g> <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> <g> <polyline data-name="Right" fill="none" id="Right-2" points="7.9 6.7 12 2.7 16.1 6.7" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline> <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="16.3" y2="4.8"></line> </g> </g> </g> </g> </g></svg>
+              </span>
+              Replace Banner
+              </button>
+
+            </div>
+          </section>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full max-w-[37.7rem] hidden tab-content" id="event">
+            <header class="space-y-1">
+              <h2 class="text-2xl font-bold text-zinc-900">Events</h2>
+              <p class="text-sm text-gray-500">
+                Showcase your upcoming events to visitors
+              </p>
+            </header>
+            <form class="rounded-xl border border-zinc-200 p-4 space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-medium text-black">Add New Event</h3>
+                <button
+                  type="button"
+                  class="toggle"
+                  aria-pressed="false"
+                  data-toggle
+                >
+                  <span></span>
+                </button>
+              </div>
+              <fieldset class="grid gap-3 sm:grid-cols-3">
+                <input
+                  type="text"
+                  placeholder="Event title"
+                  class="input"
+                />
+
+                <input
+                  type="date"
+                  class="input"
+                />
+
+                <input
+                  type="url"
+                  placeholder="https://..."
+                  class="input"
+                />
+              </fieldset>
+
+              <fieldset class="space-y-2">
+                <legend class="text-sm font-medium text-black">
+                  Thumbnail
+                </legend>
+
+                <div class="flex flex-wrap items-center gap-4">
+                  <img
+                    src="avatar.png"
+                    alt="Event thumbnail"
+                    class="h-14 w-12 rounded-lg object-cover"
+                  />
+
+                  <div class="flex gap-3">
+                    <button type="button" class="btn-secondary">
+                      Add Picture
+                    </button>
+
+                    <button type="button" class="btn-primary">
+                      Add Link
+                    </button>
+                  </div>
                 </div>
-            </div>
-            </div>
+              </fieldset>
+            </form>
+
+            <ul class="space-y-4">
+              <li>
+                <article class="rounded-xl border border-zinc-200 p-4 space-y-4">
+                  <header class="flex items-center justify-between">
+                    <h4 class="text-sm font-medium text-black">
+                      Techies Conference 2025
+                    </h4>
+
+                    <div class="inline-flex items-center space-x-3">
+                    <button
+                      type="button"
+                      aria-pressed="false"
+                      class="toggle"
+                      data-toggle
+                    >
+                      <span></span>
+                    </button>
+                    <span class="w-5 h-5">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 11V17" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </span>
+                  </div>
+                  </header>
+
+                  <!-- Inputs -->
+                  <fieldset class="grid gap-3 sm:grid-cols-3">
+                    <input
+                      type="text"
+                      value="Techies Conference 2025"
+                      class="input"
+                    />
+
+                    <input
+                      type="date"
+                      value="2025-12-23"
+                      class="input"
+                    />
+
+                    <input
+                      type="url"
+                      placeholder="https://..."
+                      class="input"
+                    />
+                  </fieldset>
+
+                  <!-- Thumbnail -->
+                  <fieldset class="space-y-2">
+                    <legend class="text-sm font-medium text-black">
+                      Thumbnail
+                    </legend>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                      <img
+                        src="avatar.png"
+                        alt="Event thumbnail"
+                        class="h-14 w-12 rounded-lg object-cover"
+                      />
+
+                      <div class="flex gap-3">
+                        <button class="btn-secondary">
+                          Change Picture
+                        </button>
+
+                        <button class="btn-danger border">
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </article>
+              </li>
+
+            </ul>
+          </section>
+
+          <section class="bg-white rounded-xl border border-zinc-200 p-6 space-y-6 w-full  max-w-[37.7rem] hidden tab-content" id="sections">
+            <header class="space-y-1">
+              <h2 class="text-2xl font-bold text-zinc-900">
+                Section Visibility
+              </h2>
+              <p class="text-sm text-gray-500">
+                Control which sections appear on your referral page
+              </p>
+            </header>
+              <!-- Note -->
+              <aside
+                class="rounded-xl bg-gray-200 p-3 text-sm text-gray-600"
+                role="note"
+              >
+                <strong>Note:</strong>
+                Profile photo, name, bio, and CTA button are mandatory and cannot be disabled.
+              </aside>
+              <!-- Toggles -->
+              <ul class="space-y-4">
+                
+                <!-- Item -->
+                <li class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-stone-50 p-4 sm:p-6">
+                  <div class="flex items-start gap-4">
+                    <span class="size-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+                      🎂
+                    </span>
+
+                    <div>
+                      <h3 class="text-base font-medium text-black">
+                        Birthday
+                      </h3>
+                      <p class="text-sm text-gray-500">
+                        Show your birthday on your page
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="toggle"
+                    aria-pressed="false"
+                    data-toggle
+                  >
+                    <span></span>
+                  </button>
+                </li>
+
+                <li class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-stone-50 p-4 sm:p-6">
+                  <div class="flex items-start gap-4">
+                    <span class="size-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+                      📢
+                    </span>
+
+                    <div>
+                      <h3 class="text-base font-medium text-black">
+                        Announcement
+                      </h3>
+                      <p class="text-sm text-gray-500">
+                        Display a special announcement banner
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    aria-pressed="false"
+                    class="toggle"
+                    data-toggle
+                  >
+                    <span></span>
+                  </button>
+                </li>
+
+                <!-- Item -->
+                <li class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-stone-50 p-4 sm:p-6">
+                  <div class="flex items-start gap-4">
+                    <span class="size-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+                      🔳
+                    </span>
+
+                    <div>
+                      <h3 class="text-base font-medium text-black">
+                        QR Code
+                      </h3>
+                      <p class="text-sm text-gray-500">
+                        Allow visitors to scan a QR code to sign up
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="toggle"
+                    aria-pressed="false"
+                    data-toggle
+                  >
+                    <span></span>
+                  </button>
+                </li>
+
+                <!-- Item -->
+                <li class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-stone-50 p-4 sm:p-6">
+                  <div class="flex items-start gap-4">
+                    <span class="size-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+                      🖼️
+                    </span>
+
+                    <div>
+                      <h3 class="text-base font-medium text-black">
+                        Header Banner
+                      </h3>
+                      <p class="text-sm text-gray-500">
+                        Show a header banner image
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="toggle"
+                    aria-pressed="false"
+                    data-toggle
+                  >
+                    <span></span>
+                  </button>
+                </li>
+
+              </ul>
+          </section>
+
+          <div class="flex justify-end">
+            <button class="bg-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-600 transition">
+              <span class="pr-2 w-6 h-6"><i class="fa-regular fa-floppy-disk"></i></span>
+              Save Changes
+            </button>
+          </div>
+
+        </section>
+      </main>
+
+      <div class="min-h-screen right-0 h-[70vh] p-4 sticky top-0 hidden lg:flex">
+        <div class=" w-full flex flex-col gap-4 h-full">
+          <!-- Link bar -->
+          <div class="flex items-center gap-3 px-4 py-3 bg-white rounded-3xl border-2 border-zinc-200">
+            <img
+              src="connect copy.png"
+              alt=""
+              class="w-3 h-4 shrink-0 object-cover"
+            />
+
+            <a
+              href="https://quoterequest.com/figmacanva"
+              class="flex-1 text-black text-base font-semibold font-archivo truncate"
+            >
+              https://quoterequest.com/figmacanva
+            </a>
+
+            <button type="button" aria-label="Copy link">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Title -->
+          <h2 class="text-left text-zinc-900 text-lg font-bold font-archivo">
+            Live Preview
+          </h2>
+
+          <div class="flex-1 border border-zinc-200  rounded-xl overflow-hidden">
+            <iframe
+              src="https://referral-nine.vercel.app/"
+              title="Live preview"
+              class="w-full h-full"
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
-      </div>
-    </section>
-    <div class="px-4 md:px-0">
-      <div class="h-10 px-4 bg-white rounded-2xl outline outline-1 outline-zinc-200 flex justify-center items-center gap-2">
-          <i class="fa-solid fa-qrcode text-gray-500"></i>
-          <span class="text-gray-500 text-base font-semibold font-archivo">
-             View QR Code
-          </span>
       </div>
     </div>
-    <section class="w-full max-w-[700px] space-y-3">
-        <article class="flex flex-col items-center text-white space-y-3 font-inter">
-            <div class="w-full max-w-[800px]">
-                <button class="bg-orange-500 px-8 py-4 rounded-[20px] w-full font-semibold">
-                Get Started <i class="fa-solid fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-    
-            <div class="w-full max-w-[700px] text-center space-y-2">
-                <p>Join ConnectNigeria Today</p>
-                <p class="pt-5">Powered by <span class="underline">ConnectNigeria</span></p>
-            </div>
-        </article>
-    </section>
-  </main>
 
-  <div class="absolute hidden lg:block right-5 bottom-5">
-    <img src="scanme.png" class="object-cover" alt="">
-  </div>
+<script>
+  const buttons = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      contents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(btn.dataset.tab).classList.remove('hidden');
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll("[data-toggle]").forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const enabled = toggle.getAttribute("aria-pressed") === "true";
+      toggle.setAttribute("aria-pressed", String(!enabled));
+
+      const input = toggle.closest("fieldset").querySelector("input");
+      input.disabled = enabled;
+
+      if (!enabled) input.focus();
+      if (enabled) input.value = "";
+    });
+  });
+</script>
+
+<script>
+  const textarea = document.getElementById("announcement-message");
+  const counter = document.getElementById("char-count");
+
+  textarea.addEventListener("input", () => {
+    counter.textContent = textarea.value.length;
+  });
+</script>
+
+<script>
+  const input = document.getElementById("bannerInput");
+  const uploadState = document.getElementById("uploadState");
+  const previewState = document.getElementById("previewState");
+  const preview = document.getElementById("bannerPreview");
+  const replaceBtn = document.getElementById("replaceBtn");
+  const toggle = document.getElementById("bannerToggle");
+
+  function showPreview(file) {
+    preview.src = URL.createObjectURL(file);
+    uploadState.classList.add("hidden");
+    previewState.classList.remove("hidden");
+  }
+
+  function resetBanner() {
+    input.value = "";
+    preview.src = "";
+    previewState.classList.add("hidden");
+    uploadState.classList.remove("hidden");
+  }
+
+  input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (file) showPreview(file);
+  });
+
+  preview.addEventListener("click", resetBanner);
+  replaceBtn.addEventListener("click", () => input.click());
+
+  toggle.addEventListener("click", () => {
+    const active = toggle.getAttribute("aria-pressed") === "true";
+    toggle.setAttribute("aria-pressed", !active);
+    input.disabled = active;
+  });
+</script>
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const openBtn = document.getElementById("openSidebar");
+  const closeBtn = document.getElementById("closeSidebar");
+  const backdrop = document.getElementById("sidebarBackdrop");
+
+  openBtn?.addEventListener("click", () => {
+    sidebar.classList.remove("-translate-x-full");
+    backdrop.classList.remove("hidden");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    sidebar.classList.add("-translate-x-full");
+    backdrop.classList.add("hidden");
+  });
+
+  backdrop?.addEventListener("click", () => {
+    sidebar.classList.add("-translate-x-full");
+    backdrop.classList.add("hidden");
+  });
+</script>
+
 </body>
 </html>
